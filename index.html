@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canibalias</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .subtitulo {
+      opacity: 0.8;
+      font-size: 1rem;
+    }
+
+    /* Créditos */
+    .creditos {
+      max-width: 800px;
+      margin: 40px auto 60px;
+      padding: 0 20px;
+      text-align: center;
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    /* Secciones por día */
+    .dia-section {
+      max-width: 1300px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .dia-title {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      border-left: 4px solid #666;
+      padding-left: 10px;
+      opacity: 0.9;
+    }
+
+    /* Galería */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 150px;        /* Miniatura pequeña */
+      object-fit: cover;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      background: #111;
+    }
+
+    .gallery img:hover {
+      opacity: 0.8;
+    }
+
+    /* LIGHTBOX */
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 6px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    #lightbox:target {
+      display: flex;
+    }
+
+    #close-lightbox {
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      margin-top: 80px;
+      background: #0a0a0a;
+      border-top: 1px solid #333;
+    }
+
+    footer img {
+      max-height: 50px;
+      margin: 10px;
+      opacity: 0.9;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CANIBALIAS - MAPA TEATRO</h1>
+  <p class="subtitulo">[Lugar] — [Fechas del evento]</p>
+</header>
+
+
+
+
+<!-- === TEMPLATE DE DÍA (repetido 16 veces) === -->
+<section class="dia-section">
+  <div class="dia-title">Día 1</div>
+  <div class="gallery">
+    <img src="fts/IMG_4837.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_4995.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_5132.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_5152.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<section class="dia-section">
+  <div class="dia-title">Día 2</div>
+  <div class="gallery">
+    <img src="Fts/IMG_5356.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_5358.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_5376.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/IMG_5532.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<section class="dia-section">
+  <div class="dia-title">Día 3</div>
+  <div class="gallery">
+    <img src="Fts/Canibalias 2025-151.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/Canibalias 2025-155.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/Canibalias 2025-55.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/Canibalias 2025-66.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<section class="dia-section">
+  <div class="dia-title">Día 4</div>
+  <div class="gallery">
+    <img src="Fts/20250928_105313.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/20250928_131948.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/20250928_133445.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<section class="dia-section">
+  <div class="dia-title">Día 4</div>
+  <div class="gallery">
+    <img src="Fts/20251018_100056.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/20251018_100108.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/20251018_100109.jpg" onclick="openLightbox(this.src)">
+    <img src="Fts/20251018_100923.jpg" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<section class="dia-section">
+  <div class="dia-title">Día 4</div>
+  <div class="gallery">
+    <img src="Fts" onclick="openLightbox(this.src)">
+    <img src="Fts" onclick="openLightbox(this.src)">
+    <img src="Fts" onclick="openLightbox(this.src)">
+    <img src="Fts" onclick="openLightbox(this.src)">
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div id="lightbox">
+  <a id="close-lightbox" href="#">×</a>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    window.location = "#lightbox";
+  }
+</script>
+
+<footer>
+
+  <strong>EQUIPO FOTOGRAFOS </strong><br>
+Juan Cristóbal Cobo <br>
+Alfonso José Venegas Borras<br>
+Carlos Alberto Rueda Cortés<br>
+Ximena Vergas<br>
+Rolf Abderhalden<br>
+Heidi Abderhalden <br>
+Oscar Salazar Barbosa <br>
+  <p>Beca LEP <br>Ensayos Sobre la Felicidad <br> Bienal BOG25</p>
+  <img src="logos/logo1.png" alt="">
+  <img src="logos/logo2.png" alt="">
+</footer>
+
+</body>
+</html>
