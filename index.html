@@ -112,19 +112,73 @@
     }
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 50px 20px;
-      margin-top: 80px;
-      background: #0a0a0a;
-      border-top: 1px solid #333;
-    }
+footer {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  margin-top: 80px;
+  border-top: 1px solid #333;
+}
 
-    footer img {
-      max-height: 50px;
-      margin: 10px;
-      opacity: 0.9;
-    }
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-col p {
+  margin: 5px 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+footer img {
+  max-height: 50px;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+footer img:hover {
+  opacity: 1;
+}
+
+.footer-logos-section {
+  border-top: 1px solid #333;
+  padding: 30px 20px 50px;
+  text-align: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logos img {
+  max-height: 55px;
+  opacity: 0.8;
+  transition: 0.2s ease;
+}
+
+.footer-logos img:hover {
+  opacity: 1;
+}
+
 
   </style>
 </head>
@@ -152,10 +206,10 @@
 <section class="dia-section">
   <div class="dia-title">Día 2</div>
   <div class="gallery">
-    <img src="Fts/IMG_5356.jpg" onclick="openLightbox(this.src)">
-    <img src="Fts/IMG_5358.jpg" onclick="openLightbox(this.src)">
-    <img src="Fts/IMG_5376.jpg" onclick="openLightbox(this.src)">
-    <img src="Fts/IMG_5532.jpg" onclick="openLightbox(this.src)">
+<img src="fts/5.jpg" onclick="openLightbox(this.src)">
+<img src="fts/6.jpg" onclick="openLightbox(this.src)">
+<img src="fts/7.jpg" onclick="openLightbox(this.src)">
+<img src="fts/8.jpg" onclick="openLightbox(this.src)">
   </div>
 </section>
 
@@ -212,21 +266,108 @@
 </script>
 
 <footer>
+  <div class="footer-container">
 
-  <strong>EQUIPO FOTOGRAFOS </strong><br>
-Juan Cristóbal Cobo <br>
-Alfonso José Venegas Borras<br>
-Carlos Alberto Rueda Cortés<br>
-Ximena Vergas<br>
-Rolf Abderhalden<br>
-Heidi Abderhalden <br>
-Oscar Salazar Barbosa <br>
-  <p>Beca LEP <br>Ensayos Sobre la Felicidad <br> Bienal BOG25</p>
-   <img src="LG/LOGO4.png">
-   <img src="LG/LOGO1.png">
-  <img src="LG/LOGO2.png">
-<img src="LG/LOGO3.png">
+    <div class="footer-col">
+      <h3>GRUPO A</h3>
+   <p>Adriana Rojas Pretel</p>
+<p>Angela Mireya Marciales Daza</p>
+<p>Mónica Viviana Chávez Henriquez</p>
+<p>Luisa Fernanda Ramirez Peña</p>
+<p>Andrés Felipe León Cepeda</p>
+<p>María Paula Rodríguez</p>
+<p>Gina Viviana Collazos Morales</p>
+    </div>
+
+        <div class="footer-col">
+      <h3>GRUPO B</h3>
+<p>Agnes Brekke Arenas</p>
+<p>Juan Carlos Campos</p>
+<p>Luisa Fernanda Acuña</p>
+<p>Luis Alejandro Penagos Díaz</p>
+<p>Marcia Cabrera</p>
+<p>Liliana Montaña</p>
+<p>Alberto Barrios</p>
+    </div>
+            <div class="footer-col">
+      <h3>GRUPO C</h3>
+<p>Nelson Andrés Castañeda Romero</p>
+<p>Frey Alejandro Español Rairán</p>
+<p>Kenny Alberto Valderrama Guarnizo</p>
+<p>Alexis Rojas Celis</p>
+<p>Isabel Jiménez</p>
+<p>Arturo Victoria Villamil</p>
+<p>Julie Rocío Ramirez Parra</p>
+    </div>
+           <div class="footer-col">
+      <h3>GRUPO D</h3>
+<p>José Julián Díaz</p>
+<p>Erika Yulieth Mosquera Mosquera</p>
+<p>Juana María</p>
+<p>Mery Palacios Mena</p>
+<p>Erika Johana Villarraga Rey</p>
+<p>Sandra Milena Valencia Blandón</p>
+<p>Valentina Lagarejo Palacios</p>
+    </div>
+           <div class="footer-col">
+      <h3>GRUPO INTERNO</h3>
+<p>Rolf Abderhalden Cortes</p>
+<p>Heidi Abderhalden Cortes</p>
+<p>Maria Ximena Vargas</p>
+<p>Jose Ignacio RIncon</p>
+<p>Oscar Salazar Barbosa</p>
+<p>Alexander Rodríguez Paredes</p>
+    </div>
+           <div class="footer-col">
+      <h3>GRUPO LOGISTICOS - GUARDIANES</h3>
+<p>Andrés Felipe Alza Gayón</p>
+<p>Tomás Marín Gómez</p>
+<p>Valeria Loaiza Ramirez</p>
+<p>Sophia Salgado Moreno</p>
+<p>Juan Sebastián González Pachón</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>SINEAMBORE</h3>
+ <p>Sonia Magally Osorio</p>
+<p>Cristian David Duarte Ortiz</p>
+<p>Carmen Adriana Osorio Aguillón</p>
+<p>Ingrid Viviana Duarte Ortiz</p>
+<p>Heyler Giselle Osorio Aguillón</p>
+<p>Alexander</p>
+<p>Lina Beatriz Osorio</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>GRUPO COMUNICACIONES</h3>
+<p>Sandra Ramirez</p>
+<p>Santiago Molina</p>
+    </div>
+
+        <div class="footer-col">
+      <h3>EQUIPO FOTOGRAFOS</h3>
+<p>Juan Cristóbal Cobo</p>
+<p>Alfonso José Venegas Borras</p>
+<p>Carlos Alberto Rueda Cortés</p>
+<p>Ximena Vergas</p>
+<p>Rolf Abderhalden</p>
+<p>Heidi Abderhalden</p>
+<p>Oscar Salazar Barbosa</p>
+    </div>
+    <div class="footer-col">
+    <h3>Beca LEP - Ensayos Sobre la Felicidad - Bienal BOG25</h3>
+    </div>
+   </div>
+
+  <div class="footer-logos-section">
+    <div class="footer-logos">
+      <img src="LG/LOGO1.png">
+      <img src="LG/LOGO2.png">
+      <img src="LG/LOGO3.png">
+      <img src="LG/LOGO4.png">
+      <img src="LG/LOGO5.png">
+    </div>
+  </div>
 </footer>
-
 </body>
 </html>
