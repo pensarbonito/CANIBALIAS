@@ -55,26 +55,29 @@
       opacity: 0.9;
     }
 
-    /* Galería */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 10px;
-    }
+   .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 6px;
+}
 
-    .gallery img {
-      width: 100%;
-      height: 150px;        /* Miniatura pequeña */
-      object-fit: cover;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: 0.2s ease;
-      background: #111;
-    }
+.gallery img {
+  width: 100%;
+  height: 120px;          /* Miniatura compacta */
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  background: #111;
+}
 
-    .gallery img:hover {
-      opacity: 0.8;
-    }
+.gallery video {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+  background: #111;
+}
 
     /* LIGHTBOX */
     #lightbox {
@@ -179,7 +182,13 @@ footer img:hover {
 .footer-logos img:hover {
   opacity: 1;
 }
+#lightbox {
+  cursor: pointer;
+}
 
+#lightbox img {
+  cursor: default;
+}
 
   </style>
 </head>
@@ -197,143 +206,143 @@ footer img:hover {
 <section class="dia-section">
   <div class="dia-title">Día 1</div>
   <div class="gallery">
-    <img src="fts/1.jpg" onclick="openLightbox(this.src)">
-    <img src="fts/2.jpg" onclick="openLightbox(this.src)">
-    <img src="fts/3.jpg" onclick="openLightbox(this.src)">
-    <img src="fts/4.jpg" onclick="openLightbox(this.src)">
+    <img src="fts/1.jpg" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="fts/2.jpg" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="fts/3.jpg" loading="lazy" onclick="openLightbox(this.src)">
+    <img src="fts/4.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 2</div>
   <div class="gallery">
-<img src="fts/58.jpg" onclick="openLightbox(this.src)">
-<img src="fts/5.jpg" onclick="openLightbox(this.src)">
-<img src="fts/6.jpg" onclick="openLightbox(this.src)">
-<img src="fts/7.jpg" onclick="openLightbox(this.src)">
-<img src="fts/8.jpg" onclick="openLightbox(this.src)">
+<img src="fts/58.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/5.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/6.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/7.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/8.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 3</div>
   <div class="gallery">
-<img src="fts/59.jpg" onclick="openLightbox(this.src)">
-<img src="fts/9.jpg" onclick="openLightbox(this.src)">
-<img src="fts/10.jpg" onclick="openLightbox(this.src)">
-<img src="fts/11.jpg" onclick="openLightbox(this.src)">
-<img src="fts/12.jpg" onclick="openLightbox(this.src)">
+<img src="fts/59.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/9.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/10.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/11.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/12.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 4</div>
   <div class="gallery">
-<img src="fts/13.jpg" onclick="openLightbox(this.src)">
-<img src="fts/14.jpg" onclick="openLightbox(this.src)">
-<img src="fts/15.jpg" onclick="openLightbox(this.src)">
+<img src="fts/13.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/14.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/15.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 5</div>
   <div class="gallery">
-<img src="fts/16.jpg" onclick="openLightbox(this.src)">
-<img src="fts/17.jpg" onclick="openLightbox(this.src)">
-<img src="fts/18.jpg" onclick="openLightbox(this.src)">
-<img src="fts/19.jpg" onclick="openLightbox(this.src)">
+<img src="fts/16.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/17.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/18.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/19.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 6</div>
   <div class="gallery">
-<img src="fts/20.jpg" onclick="openLightbox(this.src)">
-<img src="fts/21.jpg" onclick="openLightbox(this.src)">
-<img src="fts/22.jpg" onclick="openLightbox(this.src)">
-<img src="fts/23.jpg" onclick="openLightbox(this.src)">
+<img src="fts/20.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/21.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/22.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/23.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 7</div>
   <div class="gallery">
-<img src="fts/24.jpg" onclick="openLightbox(this.src)">
-<img src="fts/25.jpg" onclick="openLightbox(this.src)">
-<img src="fts/26.jpg" onclick="openLightbox(this.src)">
-<img src="fts/27.jpg" onclick="openLightbox(this.src)">
+<img src="fts/24.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/25.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/26.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/27.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 8</div>
   <div class="gallery">
- <img src="fts/28.jpg" onclick="openLightbox(this.src)">
-<img src="fts/29.jpg" onclick="openLightbox(this.src)">
-<img src="fts/30.jpg" onclick="openLightbox(this.src)">
-<img src="fts/31.jpg" onclick="openLightbox(this.src)">
-<img src="fts/32.jpg" onclick="openLightbox(this.src)">
+ <img src="fts/28.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/29.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/30.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/31.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/32.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 9</div>
   <div class="gallery">
-   <img src="fts/33.jpg" onclick="openLightbox(this.src)">
-<img src="fts/34.jpg" onclick="openLightbox(this.src)">
-<img src="fts/35.jpg" onclick="openLightbox(this.src)">
-<img src="fts/36.jpg" onclick="openLightbox(this.src)">
-<img src="fts/37.jpg" onclick="openLightbox(this.src)">
+   <img src="fts/33.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/34.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/35.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/36.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/37.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 10</div>
   <div class="gallery">
-    <img src="fts/38.jpg" onclick="openLightbox(this.src)">
-<img src="fts/39.jpg" onclick="openLightbox(this.src)">
-<img src="fts/40.jpg" onclick="openLightbox(this.src)">
-<img src="fts/41.jpg" onclick="openLightbox(this.src)">
+    <img src="fts/38.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/39.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/40.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/41.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 11</div>
   <div class="gallery">
-<img src="fts/42.jpg" onclick="openLightbox(this.src)">
-<img src="fts/43.jpg" onclick="openLightbox(this.src)">
-<img src="fts/44.jpg" onclick="openLightbox(this.src)">
-<img src="fts/45.jpg" onclick="openLightbox(this.src)">
+<img src="fts/42.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/43.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/44.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/45.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 12</div>
   <div class="gallery">
-<img src="fts/46.jpg" onclick="openLightbox(this.src)">
-<img src="fts/47.jpg" onclick="openLightbox(this.src)">
-<img src="fts/48.jpg" onclick="openLightbox(this.src)">
-<img src="fts/49.jpg" onclick="openLightbox(this.src)">
+<img src="fts/46.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/47.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/48.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/49.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 13</div>
   <div class="gallery">
-<img src="fts/50.jpg" onclick="openLightbox(this.src)">
-<img src="fts/51.jpg" onclick="openLightbox(this.src)">
-<img src="fts/52.jpg" onclick="openLightbox(this.src)">
-<img src="fts/53.jpg" onclick="openLightbox(this.src)">
+<img src="fts/50.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/51.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/52.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/53.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
 <section class="dia-section">
   <div class="dia-title">Día 14</div>
   <div class="gallery">
-  <img src="fts/54.jpg" onclick="openLightbox(this.src)">
-<img src="fts/55.jpg" onclick="openLightbox(this.src)">
-<img src="fts/56.jpg" onclick="openLightbox(this.src)">
-<img src="fts/57.jpg" onclick="openLightbox(this.src)">
+  <img src="fts/54.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/55.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/56.jpg" loading="lazy" onclick="openLightbox(this.src)">
+<img src="fts/57.jpg" loading="lazy" onclick="openLightbox(this.src)">
   </div>
 </section>
 
@@ -353,9 +362,30 @@ footer img:hover {
 
 <script>
   function openLightbox(src) {
-    document.getElementById("lightbox-img").src = src;
-    window.location = "#lightbox";
+    const lb = document.getElementById("lightbox");
+    const img = document.getElementById("lightbox-img");
+    img.src = src;
+    lb.style.display = "flex";
   }
+
+  // Cerrar al hacer clic fuera de la imagen
+  document.getElementById("lightbox").addEventListener("click", function(e) {
+    if (e.target.id === "lightbox") {
+      this.style.display = "none";
+    }
+  });
+
+  // Cerrar con ESC
+  document.addEventListener("keydown", function(e) {
+    if (e.key === "Escape") {
+      document.getElementById("lightbox").style.display = "none";
+    }
+  });
+
+  // Cerrar con botón "×"
+  document.getElementById("close-lightbox").onclick = function() {
+    document.getElementById("lightbox").style.display = "none";
+  };
 </script>
 
 <footer>
