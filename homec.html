@@ -261,6 +261,24 @@ footer img:hover {
 #lightbox {
   cursor: zoom-out;
 }
+    @media (max-width: 768px) {
+
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 3px;
+  }
+
+  .gallery img,
+  .gallery video {
+    border-radius: 2px;
+  }
+
+  .dia-section {
+    padding: 0 8px;
+    margin: 20px auto;
+  }
+
+}
   </style>
 </head>
 <body>
