@@ -1,525 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canibalias</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #000;
-      color: #fff;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap" rel="stylesheet">
 
-    header {
-      text-align: center;
-      padding: 50px 20px 20px;
-    }
+<title>Landing Máscara</title>
 
-    h1 {
-      font-size: 2.4rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .subtitulo {
-      opacity: 0.8;
-      font-size: 1rem;
-    }
-
-    /* Créditos */
-    .creditos {
-      max-width: 800px;
-      margin: 40px auto 60px;
-      padding: 0 20px;
-      text-align: center;
-      line-height: 1.6;
-      opacity: 0.85;
-    }
-
-    /* Secciones por día */
-    .dia-section {
-      max-width: 1300px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .dia-title {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      border-left: 4px solid #666;
-      padding-left: 10px;
-      opacity: 0.9;
-    }
-
-   .gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 6px;
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: "Rubik Beastly", system-ui;
 }
 
-.gallery img {
-  width: 100%;
-  height: 120px;          /* Miniatura compacta */
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: 0.2s ease;
-  background: #111;
+.hero{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#000;
+overflow:hidden;
+position:relative; /* importante */
 }
 
-.gallery video {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  border-radius: 4px;
-  background: #111;
+.mask-text{
+font-size: clamp(60px, 15vw, 250px);
+font-weight:900;
+text-align:center;
+line-height:0.9;
+
+background-image:url('https://pensarbonito.github.io/CANIBALIAS/fts/8.jpg');
+background-size:cover;
+background-position:center;
+
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
+
+position:relative;
+z-index:2;
 }
 
-    /* LIGHTBOX */
-    #lightbox {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
+/* link invisible SOLO dentro del hero */
+.full-link{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+z-index:1;
+}
 
-    #lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 6px;
-      box-shadow: 0 0 20px rgba(255,255,255,0.2);
-    }
-
-    #lightbox:target {
-      display: flex;
-    }
-
-    #close-lightbox {
-      position: fixed;
-      top: 20px;
-      right: 30px;
-      font-size: 2rem;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* Footer */
+/* Footer */
 footer {
-  background: #0a0a0a;
-  padding: 60px 20px;
-  margin-top: 80px;
-  border-top: 1px solid #333;
-}
-
-.footer-container {
-  max-width: 1200px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-}
-
-.footer-col h3 {
-  margin-bottom: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.footer-col p {
-  margin: 5px 0;
-  opacity: 0.85;
-  font-size: 0.95rem;
-}
-
-.footer-logos {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-footer img {
-  max-height: 50px;
-  opacity: 0.85;
-  transition: 0.2s ease;
-}
-
-footer img:hover {
-  opacity: 1;
+background: #0a0a0a;
+padding: 60px 20px;
+border-top: 1px solid #333;
 }
 
 .footer-logos-section {
-  border-top: 1px solid #333;
-  padding: 30px 20px 50px;
-  margin-top: 15px;
-  text-align: center;
+max-width:1200px;
+margin:auto;
+text-align:center;
 }
 
 .footer-logos {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
 }
 
 .footer-logos img {
-  max-height: 55px;
-  opacity: 0.8;
-  transition: 0.2s ease;
+max-height:55px;
+opacity:0.8;
+transition:0.2s ease;
 }
 
 .footer-logos img:hover {
-  opacity: 1;
-}
-#lightbox {
-  cursor: pointer;
+opacity:1;
 }
 
-#lightbox img {
-  cursor: default;
+@media (max-width:768px){
+
+.mask-text{
+font-size: clamp(60px, 18vw, 140px);
 }
 
-  </style>
+.footer-logos img {
+max-height:40px;
+}
+
+}
+</style>
 </head>
+
 <body>
 
-<header>
-  <h1>CANIBALIAS</h1>
-  <p class="subtitulo">MAPA TEATRO<br>laboratorio de artistas</p>
-</header>
+<section class="hero">
 
-<section class="dia-section">
-  <div class="dia-title">Día 1</div>
-  <div class="gallery">
-    <img src="fts/dia1.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <img src="fts/1.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <img src="fts/2.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <img src="fts/3.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <img src="fts/4.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
+<a href="homec.html" class="full-link"></a>
+
+<h1 class="mask-text">
+CANIB<br>ALIAS
+</h1>
+
 </section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 2</div>
-  <div class="gallery">
-    <img src="fts/dia2.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/58.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/5.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/6.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/7.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/8.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 3</div>
-  <div class="gallery">
-    <img src="fts/dia3.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/59.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/9.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/10.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/11.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/12.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 4</div>
-  <div class="gallery">
-    <img src="fts/dia4.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/13.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/14.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/15.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 5</div>
-  <div class="gallery">
-    <img src="fts/dia5.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/16.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/17.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/18.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/19.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 6</div>
-  <div class="gallery">
-    <img src="fts/dia6.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/20.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/21.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/22.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/23.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 7</div>
-  <div class="gallery">
-    <img src="fts/dia7.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/24.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/25.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/26.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/27.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 8</div>
-  <div class="gallery">
-    <img src="fts/dia8.jpg" loading="lazy" onclick="openLightbox(this.src)">
- <img src="fts/28.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/29.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/30.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/31.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/32.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 9</div>
-  <div class="gallery">
-    <img src="fts/dia9.jpg" loading="lazy" onclick="openLightbox(this.src)">
-   <img src="fts/33.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/34.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/35.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/36.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/37.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 10</div>
-  <div class="gallery">
-    <img src="fts/dia10.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <img src="fts/38.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/39.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/40.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/41.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 11</div>
-  <div class="gallery">
-    <img src="fts/dia11.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/42.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/43.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/44.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/45.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 12</div>
-  <div class="gallery">
-    <img src="fts/dia12.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/46.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/47.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/48.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/49.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 13</div>
-  <div class="gallery">
-    <img src="fts/dia13.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/50.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/51.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/52.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/53.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 14</div>
-  <div class="gallery">
-    <img src="fts/dia14.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  <img src="fts/54.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/55.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/56.jpg" loading="lazy" onclick="openLightbox(this.src)">
-<img src="fts/57.jpg" loading="lazy" onclick="openLightbox(this.src)">
-  </div>
-</section>
-
-<section class="dia-section">
-  <div class="dia-title">Día 15</div>
-  <div class="gallery">
-    <img src="fts/dia15.jpg" loading="lazy" onclick="openLightbox(this.src)">
-    <video src="fts/61.mp4" controls width="300"></video>
-    <video src="fts/60.mp4" controls width="300"></video>
-  </div>
-</section>
-
-<!-- LIGHTBOX -->
-<div id="lightbox">
-  <a id="close-lightbox" href="#">×</a>
-  <img id="lightbox-img" src="" alt="">
-</div>
-
-<script>
-  function openLightbox(src) {
-    const lb = document.getElementById("lightbox");
-    const img = document.getElementById("lightbox-img");
-    img.src = src;
-    lb.style.display = "flex";
-  }
-
-  // Cerrar al hacer clic fuera de la imagen
-  document.getElementById("lightbox").addEventListener("click", function(e) {
-    if (e.target.id === "lightbox") {
-      this.style.display = "none";
-    }
-  });
-
-  // Cerrar con ESC
-  document.addEventListener("keydown", function(e) {
-    if (e.key === "Escape") {
-      document.getElementById("lightbox").style.display = "none";
-    }
-  });
-
-  // Cerrar con botón "×"
-  document.getElementById("close-lightbox").onclick = function() {
-    document.getElementById("lightbox").style.display = "none";
-  };
-</script>
 
 <footer>
-  <div class="footer-container">
-   <div class="footer-col">
-    <h3>Beca LEP<br>Ensayos Sobre la Felicidad<br>Bienal BOG25</h3>
-
-    </div>
-
-    <div class="footer-col">
-      <h3>GRUPO A</h3>
-   <p>Adriana Rojas Pretel</p>
-<p>Angela Mireya Marciales Daza</p>
-<p>Mónica Viviana Chávez Henriquez</p>
-<p>Luisa Fernanda Ramirez Peña</p>
-<p>Andrés Felipe León Cepeda</p>
-<p>María Paula Rodríguez</p>
-<p>Gina Viviana Collazos Morales</p>
-    </div>
-
-        <div class="footer-col">
-      <h3>GRUPO B</h3>
-<p>Agnes Brekke Arenas</p>
-<p>Juan Carlos Campos</p>
-<p>Luisa Fernanda Acuña</p>
-<p>Luis Alejandro Penagos Díaz</p>
-<p>Marcia Cabrera</p>
-<p>Liliana Montaña</p>
-<p>Alberto Barrios</p>
-    </div>
-            <div class="footer-col">
-      <h3>GRUPO C</h3>
-<p>Nelson Andrés Castañeda Romero</p>
-<p>Frey Alejandro Español Rairán</p>
-<p>Kenny Alberto Valderrama Guarnizo</p>
-<p>Alexis Rojas Celis</p>
-<p>Isabel Jiménez</p>
-<p>Arturo Victoria Villamil</p>
-<p>Julie Rocío Ramirez Parra</p>
-    </div>
-           <div class="footer-col">
-      <h3>GRUPO D</h3>
-<p>José Julián Díaz</p>
-<p>Erika Yulieth Mosquera Mosquera</p>
-<p>Juana María Galindo</p>
-<p>Mery Palacios Mena</p>
-<p>Erika Johana Villarraga Rey</p>
-<p>Sandra Milena Valencia Blandón</p>
-<p>Valentina Lagarejo Palacios</p>
-    </div>
-           <div class="footer-col">
-      <h3>GRUPO INTERNO</h3>
-<p>Rolf Abderhalden Cortes</p>
-<p>Heidi Abderhalden Cortes</p>
-<p>Maria Ximena Vargas</p>
-<p>Jose Ignacio Rincón</p>
-<p>Oscar Salazar Barbosa</p>
-<p>Alexander Rodríguez Paredes</p>
-<p>Javier Navarro</p>
-    </div>
-           <div class="footer-col">
-      <h3>GRUPO LOGISTICOS<br>GUARDIANES</h3>
-<p>Andrés Felipe Alza Gayón</p>
-<p>Tomás Marín Gómez</p>
-<p>Valeria Loaiza Ramirez</p>
-<p>Sophia Salgado Moreno</p>
-<p>Juan Sebastián González Pachón</p>
-    </div>
-
-    <div class="footer-col">
-      <h3>GRUPO SINEAMBORE</h3>
- <p>Sonia Osorio Aguillón</p>
-<p>Cristian David Duarte Ortiz</p>
-<p>Carmen Adriana Osorio Aguillón</p>
-<p>Ingrid Viviana Duarte Ortiz</p>
-<p>Heyler Giselle Osorio Aguillón</p>
-<p>Alexander Sobrino</p>
-<p>Lina Beatriz Osorio</p>
-<p>Felipe Velázquez</p>
-<p>Luz Adriana Beltrán</p>
-    </div>
-
-    <div class="footer-col">
-      <h3>GRUPO COMUNICACIONES</h3>
-<p>Sandra Ramirez</p>
-<p>Santiago Molina</p>
-    </div>
-
-        <div class="footer-col">
-      <h3>EQUIPO FOTOGRAFOS</h3>
-<p>Juan Cristóbal Cobo</p>
-<p>Alfonso José Venegas Borras</p>
-<p>Justo de Gaula</p>
-<p>Ximena Vergas</p>
-<p>Rolf Abderhalden</p>
-<p>Heidi Abderhalden</p>
-<p>Oscar Salazar Barbosa</p>
-    </div>
-
-            <div class="footer-col">
-      <h3>GRUPO VESTUARIO</h3>
-<p>Elizaberh Abderhalden Cortes</p>
-<p>Jarbleidy Parra Terán</p>
-<p>Justo de Gaula</p>
-    </div>
-
-                <div class="footer-col">
-      <h3>GRUPO ALIMENTACIÓN</h3>
-<p>Pedro Alirio García</p>
-<p>Sandra Torres</p>
-    </div>
- 
-   </div>
-
-  <div class="footer-logos-section">
-    <div class="footer-logos">
-      <img src="LG/LOGO1.png">
-      <img src="LG/LOGO2.png">
-      <img src="LG/LOGO3.png">
-      <img src="LG/LOGO4.png">
-      <img src="LG/LOGO5.png">
-    </div>
-  </div>
+<div class="footer-logos-section">
+<div class="footer-logos">
+<img src="LG/LOGO1.png">
+<img src="LG/LOGO2.png">
+<img src="LG/LOGO3.png">
+<img src="LG/LOGO4.png">
+<img src="LG/LOGO5.png">
+</div>
+</div>
 </footer>
+
 </body>
 </html>
