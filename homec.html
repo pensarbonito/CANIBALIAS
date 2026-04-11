@@ -21,12 +21,12 @@
 }
 
 h1 {
-  h1 {
   font-family: "Rubik Beastly", system-ui;
-  font-size: clamp(2.5rem, 14vw, 10rem);
-  letter-spacing: clamp(4px, 2vw, 15px);
-  margin: 10px 0 0;
-  line-height: .85;
+font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 400;
+  letter-spacing: 15px;
+  margin-bottom: 10px;
+  line-height: .9;
   background-image: url('https://pensarbonito.github.io/CANIBALIAS/fts/1.jpg');
   background-size: cover;
   background-position: center;
@@ -261,48 +261,24 @@ footer img:hover {
 #lightbox {
   cursor: zoom-out;
 }
+    @media (max-width: 768px) {
 
-@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 3px;
+  }
 
-.dias-grid {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-}
+  .gallery img,
+  .gallery video {
+    border-radius: 2px;
+  }
 
-.dia-card {
-  height: 110px;
-}
-
-.dia-card span {
-  font-size: clamp(2rem, 10vw, 5rem);
-}
-.gallery {
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 2px;
-}
-
-.gallery img,
-.gallery video {
-  border-radius: 2px;
-}
-
-.back-btn {
-  padding: 12px 20px;
-  font-size: 14px;
-  margin: 20px auto;
-}
   .dia-section {
-  padding: 0 6px;
-  margin: 15px auto;
-}
-
-.dia-title {
-  font-size: 1rem;
-  margin-bottom: 10px;
-}
+    padding: 0 8px;
+    margin: 20px auto;
+  }
 
 }
-
   </style>
 </head>
 <body>
