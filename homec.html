@@ -130,7 +130,75 @@ h1 {
   color: white;
   text-decoration: none;
 }
+/* Footer */
+footer {
+  background: #0a0a0a;
+  padding: 60px 20px;
+  margin-top: 80px;
+  border-top: 1px solid #333;
+}
 
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-col h3 {
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.footer-col p {
+  margin: 5px 0;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+footer img {
+  max-height: 50px;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+footer img:hover {
+  opacity: 1;
+}
+
+.footer-logos-section {
+  border-top: 1px solid #333;
+  padding: 30px 20px 50px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-logos img {
+  max-height: 55px;
+  opacity: 0.8;
+  transition: 0.2s ease;
+}
+
+.footer-logos img:hover {
+  opacity: 1;
+}
+ 
 /* BOTON */
 .back-btn {
   display: none;
@@ -167,6 +235,19 @@ h1 {
 <section id="dias-home" class="dias-grid">
 <div class="dia-card" onclick="mostrarDia(1)"><span style="background-image:url('fts/3.jpg')">1</span></div>
 <div class="dia-card" onclick="mostrarDia(2)"><span style="background-image:url('fts/8.jpg')">2</span></div>
+<div class="dia-card" onclick="mostrarDia(3)"><span style="background-image:url('fts/12.jpg')">3</span></div>
+<div class="dia-card" onclick="mostrarDia(4)"><span style="background-image:url('fts/14.jpg')">4</span></div>
+<div class="dia-card" onclick="mostrarDia(5)"><span style="background-image:url('fts/dia5.jpg')">5</span></div>
+<div class="dia-card" onclick="mostrarDia(6)"><span style="background-image:url('fts/dia6.jpg')">6</span></div>
+<div class="dia-card" onclick="mostrarDia(7)"><span style="background-image:url('fts/dia7.jpg')">7</span></div>
+<div class="dia-card" onclick="mostrarDia(8)"><span style="background-image:url('fts/dia8.jpg')">8</span></div>
+<div class="dia-card" onclick="mostrarDia(9)"><span style="background-image:url('fts/dia9.jpg')">9</span></div>
+<div class="dia-card" onclick="mostrarDia(10)"><span style="background-image:url('fts/dia10.jpg')">10</span></div>
+<div class="dia-card" onclick="mostrarDia(11)"><span style="background-image:url('fts/dia11.jpg')">11</span></div>
+<div class="dia-card" onclick="mostrarDia(12)"><span style="background-image:url('fts/dia12.jpg')">12</span></div>
+<div class="dia-card" onclick="mostrarDia(13)"><span style="background-image:url('fts/dia13.jpg')">13</span></div>
+<div class="dia-card" onclick="mostrarDia(14)"><span style="background-image:url('fts/dia14.jpg')">14</span></div>
+<div class="dia-card" onclick="mostrarDia(15)"><span style="background-image:url('fts/dia15.jpg')">15</span></div>
 </section>
 
 <section class="dia-section" id="dia1">
