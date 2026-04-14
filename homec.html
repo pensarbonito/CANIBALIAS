@@ -53,7 +53,7 @@ h1 {
 
 .dia-card span {
   font-family: "Rubik Beastly";
-  font-size: clamp(3rem, 8vw, 16rem);
+  font-size: clamp(10rem, 8vw, 16rem);
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -216,7 +216,8 @@ footer img:hover {
     grid-template-columns: repeat(auto-fill, minmax(85px,1fr));
   }
 
-  .dia-card { height:140px; }
+  .dia-card { 
+      font-size: clamp(14rem, 8vw, 16rem); }
 
   h1 {
     font-size: clamp(2.2rem, 12vw, 3.5rem);
@@ -272,6 +273,19 @@ footer img:hover {
 <video src="fts/60.mp4" onclick="openLightbox(this.src,'video',this)"></video>
 </div>
 </section>
+
+<section class="dia-section" id="dia3">
+<div class="dia-title">Día 3</div>
+<div class="gallery">
+<img src="fts/dia3.jpg" onclick="openLightbox(this.src,'img',this)">
+<img src="fts/59.jpg" onclick="openLightbox(this.src,'img',this)">
+<img src="fts/9.jpg" onclick="openLightbox(this.src,'img',this)">
+<img src="fts/10.jpg" onclick="openLightbox(this.src,'img',this)">
+<img src="fts/11.jpg" onclick="openLightbox(this.src,'img',this)">
+<img src="fts/12.jpg" onclick="openLightbox(this.src,'img',this)">
+  </div>
+</section>
+
 
 <div id="lightbox">
 <a id="close-lightbox" href="#">×</a>
