@@ -449,7 +449,7 @@ footer img:hover {
 </section>
   
 <div id="lightbox">
-<a id="close-lightbox" href="#">✕</a>
+<a id="close-lightbox" href="javascript:void(0)" onclick="closeLightbox()">✕</a>
 <div class="nav prev" onclick="prevMedia()">‹</div>
 <div class="nav next" onclick="nextMedia()">›</div>
   
@@ -632,7 +632,7 @@ document.addEventListener("keydown", e=>{
 
 document.getElementById("lightbox").onclick = e=>{
   if(e.target.id==="lightbox"){
-    e.currentTarget.style.display="none";
+   closeLightbox();
   }
 };
 
@@ -659,7 +659,13 @@ function prevMedia(){
   const item = currentGallery[currentIndex];
   showMedia(item.type, item.src);
 }
+function closeLightbox(){
+  const lb = document.getElementById("lightbox");
+  const video = document.getElementById("lightbox-video");
 
+  video.pause();
+  lb.style.display = "none";
+}
 </script>
 
 </body>
