@@ -215,6 +215,33 @@ footer img:hover {
   cursor: pointer;
 }
 
+  /* BOTONES CARRUSEL */
+.nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  user-select: none;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.nav.prev {
+  left: 20px;
+}
+
+.nav.next {
+  right: 20px;
+}
+
 /* MOBILE */
 @media (max-width:768px){
   .gallery {
@@ -420,19 +447,12 @@ footer img:hover {
     <video src="fts/61.mp4" onclick="openLightbox(this.src,'video',this)"></video>
   </div>
 </section>
-
-
-
-
-
-
-
-
-
-
   
 <div id="lightbox">
-<a id="close-lightbox" href="#"></a>
+<a id="close-lightbox" href="#">✕</a>
+<div class="nav prev" onclick="prevMedia()">‹</div>
+<div class="nav next" onclick="nextMedia()">›</div>
+  
 <img id="lightbox-img">
 <video id="lightbox-video" controls></video>
 </div>
@@ -602,17 +622,8 @@ document.addEventListener("keydown", e=>{
   const lb = document.getElementById("lightbox");
   if(lb.style.display!=="flex") return;
 
-  if(e.key==="ArrowRight"){
-    currentIndex=(currentIndex+1)%currentGallery.length;
-    const item=currentGallery[currentIndex];
-    showMedia(item.type,item.src);
-  }
-
-  if(e.key==="ArrowLeft"){
-    currentIndex=(currentIndex-1+currentGallery.length)%currentGallery.length;
-    const item=currentGallery[currentIndex];
-    showMedia(item.type,item.src);
-  }
+  if(e.key==="ArrowRight") nextMedia();
+  if(e.key==="ArrowLeft") prevMedia();
 
   if(e.key==="Escape"){
     lb.style.display="none";
@@ -636,6 +647,17 @@ function volverHome(){
   document.getElementById("dias-home").style.display="grid";
   document.querySelectorAll(".dia-section").forEach(s=>s.style.display="none");
   document.querySelector(".back-btn").style.display="none";
+}
+  function nextMedia(){
+  currentIndex = (currentIndex + 1) % currentGallery.length;
+  const item = currentGallery[currentIndex];
+  showMedia(item.type, item.src);
+}
+
+function prevMedia(){
+  currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+  const item = currentGallery[currentIndex];
+  showMedia(item.type, item.src);
 }
 
 </script>
